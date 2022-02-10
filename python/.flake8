@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 88
+extend-exclude = src/**/*_pb2.py
+
+# Conflict with black in terms of whitespace before ':'
+ignore = E203

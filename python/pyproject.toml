@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "sb-dccl"
+version = "0.1.0"
+description = ""
+authors = ["daniel.eades <daniel.eades@hotmail.com>"]
+include = ["src/sb_dccl/**/*.py"] # Required if we want to gitignore generated files
+
+[tool.poetry.dependencies]
+python = "^3.7"
+dccl = {path = "../dccl/python"}
+protobuf = "^3.19.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.1.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+
+[tool.poetry.scripts]
+code-gen = 'scripts.code_gen:run'
+
+[tool.isort]
+skip_glob = "**/*_pb2.py"
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
